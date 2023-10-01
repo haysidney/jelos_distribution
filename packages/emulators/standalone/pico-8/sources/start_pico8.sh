@@ -26,6 +26,8 @@ INTEGER_SCALE=$(get_setting pico-8.integerscale)
 if [ "${INTEGER_SCALE}" = "1" ]
 then
   OPTIONS="${OPTIONS} -pixel_perfect 1"
+else
+  OPTIONS="${OPTIONS} -software_blit 1 -draw_rect 0,0,720,720"
 fi
 
 cp -f /usr/config/SDL-GameControllerDB/gamecontrollerdb.txt /storage/roms/pico-8/sdl_controllers.txt
