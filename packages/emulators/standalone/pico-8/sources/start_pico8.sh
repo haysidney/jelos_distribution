@@ -30,6 +30,8 @@ INTEGER_SCALE=$(get_setting pico-8.integerscale)
 if [ "${INTEGER_SCALE}" = "1" ]
 then
   OPTIONS="${OPTIONS} -pixel_perfect 1"
+else
+  OPTIONS="${OPTIONS} -software_blit 1 -draw_rect 0,0,720,720"
 fi
 
 if [ -d "${GAME_DIR}/${HW_ARCH}" ]
